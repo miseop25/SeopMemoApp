@@ -17,10 +17,29 @@ class MemoListTableViewController: UITableViewController {
         f.locale = Locale(identifier: "Ko_kr")
         return f
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //데이터 소스가 전달하는 최신 데이터로 업데이트 하는 것
+        super.viewWillAppear(animated)
+        // 풀 스크린에서 사용됨
+//        tableView.reloadData()
+        
+    }
 
+    // observer를 받아들이고 혜제하는 것 
+    var token: NSObjectProtocol?
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMemoDidInsert, object: nil, queue: OperationQueue.main){ [weak self] (noti) in self?.tableView.reloadData()
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
