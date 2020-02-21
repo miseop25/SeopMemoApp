@@ -37,7 +37,7 @@ class MemoListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
             if let vc = segue.destination as? DetailViewController {
-                vc.memo = Memo.dummyMemoList[indexPath.row]
+                vc.memo = DataManager.shared.memoList[indexPath.row]
             }
         }
         
@@ -62,7 +62,7 @@ class MemoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         // 이 메소드를 통해 몇개의 테이블 뷰를 호출할지
-        return Memo.dummyMemoList.count
+        return DataManager.shared.memoList.count
     }
 
     
@@ -72,9 +72,9 @@ class MemoListTableViewController: UITableViewController {
 
         // Configure the cell...
         // indexpath 의 row 데이터에 몇번째 쎌인지 알 수 있다.
-        let target = Memo.dummyMemoList[indexPath.row]
+        let target = DataManager.shared.memoList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(from: target.insertData)
+        cell.detailTextLabel?.text = formatter.string(for : target.insertDate)
 
         return cell
     }

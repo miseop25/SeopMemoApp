@@ -15,6 +15,8 @@
 		76E4822423FD8F8900E0C009 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822323FD8F8900E0C009 /* ComposeViewController.swift */; };
 		76E4822623FD937400E0C009 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822523FD937400E0C009 /* UIViewController+Alert.swift */; };
 		76E4822823FFB52500E0C009 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822723FFB52500E0C009 /* DetailViewController.swift */; };
+		76E4822B23FFDBEC00E0C009 /* seopMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822923FFDBEC00E0C009 /* seopMemo.xcdatamodeld */; };
+		76E4825123FFF43D00E0C009 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4825023FFF43D00E0C009 /* DataManager.swift */; };
 		76F20E9E23FCDEB4002F6C23 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F20E9D23FCDEB4002F6C23 /* model.swift */; };
 		76F20EA023FCE171002F6C23 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		76E4822323FD8F8900E0C009 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		76E4822523FD937400E0C009 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		76E4822723FFB52500E0C009 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		76E4822A23FFDBEC00E0C009 /* seopMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = seopMemo.xcdatamodel; sourceTree = "<group>"; };
+		76E4825023FFF43D00E0C009 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		76F20E9D23FCDEB4002F6C23 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 		769ABD5C23FCD1F700B5374F /* seopMemo */ = {
 			isa = PBXGroup;
 			children = (
+				76E4824F23FFF42B00E0C009 /* Data */,
 				76F20E9C23FCDE8C002F6C23 /* model */,
 				769ABD5D23FCD1F700B5374F /* AppDelegate.swift */,
 				769ABD5F23FCD1F700B5374F /* SceneDelegate.swift */,
@@ -72,11 +77,20 @@
 				769ABD6823FCD1F900B5374F /* LaunchScreen.storyboard */,
 				769ABD6B23FCD1F900B5374F /* Info.plist */,
 				76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */,
+				76E4822923FFDBEC00E0C009 /* seopMemo.xcdatamodeld */,
 				76E4822323FD8F8900E0C009 /* ComposeViewController.swift */,
 				76E4822523FD937400E0C009 /* UIViewController+Alert.swift */,
 				76E4822723FFB52500E0C009 /* DetailViewController.swift */,
 			);
 			path = seopMemo;
+			sourceTree = "<group>";
+		};
+		76E4824F23FFF42B00E0C009 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				76E4825023FFF43D00E0C009 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		76F20E9C23FCDE8C002F6C23 /* model */ = {
@@ -160,10 +174,12 @@
 			files = (
 				76E4822423FD8F8900E0C009 /* ComposeViewController.swift in Sources */,
 				769ABD5E23FCD1F700B5374F /* AppDelegate.swift in Sources */,
+				76E4822B23FFDBEC00E0C009 /* seopMemo.xcdatamodeld in Sources */,
 				769ABD6023FCD1F700B5374F /* SceneDelegate.swift in Sources */,
 				76E4822623FD937400E0C009 /* UIViewController+Alert.swift in Sources */,
 				76F20E9E23FCDEB4002F6C23 /* model.swift in Sources */,
 				76F20EA023FCE171002F6C23 /* MemoListTableViewController.swift in Sources */,
+				76E4825123FFF43D00E0C009 /* DataManager.swift in Sources */,
 				76E4822823FFB52500E0C009 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76E4822923FFDBEC00E0C009 /* seopMemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76E4822A23FFDBEC00E0C009 /* seopMemo.xcdatamodel */,
+			);
+			currentVersion = 76E4822A23FFDBEC00E0C009 /* seopMemo.xcdatamodel */;
+			path = seopMemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 769ABD5223FCD1F700B5374F /* Project object */;
 }
