@@ -21,8 +21,8 @@ class MemoListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         //데이터 소스가 전달하는 최신 데이터로 업데이트 하는 것
         super.viewWillAppear(animated)
-        // 풀 스크린에서 사용됨
-//        tableView.reloadData()
+        DataManager.shared.fetchMemo()
+        tableView.reloadData()
         
     }
 
