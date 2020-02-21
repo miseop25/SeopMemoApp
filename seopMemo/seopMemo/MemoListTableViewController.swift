@@ -26,12 +26,22 @@ class MemoListTableViewController: UITableViewController {
         
     }
 
-    // observer를 받아들이고 혜제하는 것 
+    // observer를 받아들이고 혜제하는 것
     var token: NSObjectProtocol?
     deinit {
         if let token = token {
             NotificationCenter.default.removeObserver(token)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            if let vc = segue.destination as? DetailViewController {
+                vc.memo = Memo.dummyMemoList[indexPath.row]
+            }
+        }
+        
+        
     }
     
     override func viewDidLoad() {
