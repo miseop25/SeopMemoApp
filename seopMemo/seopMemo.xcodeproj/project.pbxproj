@@ -17,7 +17,7 @@
 		76E4822823FFB52500E0C009 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822723FFB52500E0C009 /* DetailViewController.swift */; };
 		76E4822B23FFDBEC00E0C009 /* seopMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76E4822923FFDBEC00E0C009 /* seopMemo.xcdatamodeld */; };
 		76E4825123FFF43D00E0C009 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4825023FFF43D00E0C009 /* DataManager.swift */; };
-		76F20E9E23FCDEB4002F6C23 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F20E9D23FCDEB4002F6C23 /* model.swift */; };
+		76E4827824019A0400E0C009 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4827724019A0400E0C009 /* MemoTableViewCell.swift */; };
 		76F20EA023FCE171002F6C23 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		76E4822723FFB52500E0C009 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		76E4822A23FFDBEC00E0C009 /* seopMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = seopMemo.xcdatamodel; sourceTree = "<group>"; };
 		76E4825023FFF43D00E0C009 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		76F20E9D23FCDEB4002F6C23 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		76E4827724019A0400E0C009 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				76E4824F23FFF42B00E0C009 /* Data */,
-				76F20E9C23FCDE8C002F6C23 /* model */,
 				769ABD5D23FCD1F700B5374F /* AppDelegate.swift */,
 				769ABD5F23FCD1F700B5374F /* SceneDelegate.swift */,
 				769ABD6323FCD1F700B5374F /* Main.storyboard */,
@@ -77,6 +76,7 @@
 				769ABD6823FCD1F900B5374F /* LaunchScreen.storyboard */,
 				769ABD6B23FCD1F900B5374F /* Info.plist */,
 				76F20E9F23FCE171002F6C23 /* MemoListTableViewController.swift */,
+				76E4827724019A0400E0C009 /* MemoTableViewCell.swift */,
 				76E4822923FFDBEC00E0C009 /* seopMemo.xcdatamodeld */,
 				76E4822323FD8F8900E0C009 /* ComposeViewController.swift */,
 				76E4822523FD937400E0C009 /* UIViewController+Alert.swift */,
@@ -91,14 +91,6 @@
 				76E4825023FFF43D00E0C009 /* DataManager.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		76F20E9C23FCDE8C002F6C23 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				76F20E9D23FCDEB4002F6C23 /* model.swift */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +169,9 @@
 				76E4822B23FFDBEC00E0C009 /* seopMemo.xcdatamodeld in Sources */,
 				769ABD6023FCD1F700B5374F /* SceneDelegate.swift in Sources */,
 				76E4822623FD937400E0C009 /* UIViewController+Alert.swift in Sources */,
-				76F20E9E23FCDEB4002F6C23 /* model.swift in Sources */,
 				76F20EA023FCE171002F6C23 /* MemoListTableViewController.swift in Sources */,
 				76E4825123FFF43D00E0C009 /* DataManager.swift in Sources */,
+				76E4827824019A0400E0C009 /* MemoTableViewCell.swift in Sources */,
 				76E4822823FFB52500E0C009 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

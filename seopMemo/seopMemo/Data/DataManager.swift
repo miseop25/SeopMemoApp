@@ -36,9 +36,10 @@ class DataManager {
         
     }
     
-    func addNewMemo( _ memo: String?){
+    func addNewMemo( _ memo: String?, _ memoTitle: String?){
         let newMemo = Memo(context: mainContenxt)
         newMemo.content = memo
+        newMemo.memoTitle = memoTitle
         newMemo.insertDate = Date()
         
         memoList.insert(newMemo, at: 0)

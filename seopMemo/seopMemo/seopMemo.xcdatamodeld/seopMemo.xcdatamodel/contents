@@ -3,8 +3,10 @@
     <entity name="Memo" representedClassName="Memo" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="memoImage" optional="YES" attributeType="Binary"/>
+        <attribute name="memoTitle" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Memo" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Memo" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
