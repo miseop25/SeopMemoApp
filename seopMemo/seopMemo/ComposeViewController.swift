@@ -13,10 +13,12 @@ class ComposeViewController: UIViewController {
     var editTarget: Memo?
     var originalMemoContent: String?
     var originalMemoTitle: String?
-    
+    let pickerController = UIImagePickerController()
+    var bufImage: UIImage?
 
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var memoTitleField: UITextField!
+    
     @IBOutlet weak var memoImageView: UIImageView!
     
     
@@ -45,7 +47,8 @@ class ComposeViewController: UIViewController {
             DataManager.shared.saveContext()
             NotificationCenter.default.post(name : ComposeViewController.memoDidChange ,object: nil)
         }else {
-            DataManager.shared.addNewMemo(memo, memoTitle)
+            let imageData = bufImage?.pngData()
+            DataManager.shared.addNewMemo(memo, memoTitle, imageData)
             NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
 
         }
@@ -56,6 +59,14 @@ class ComposeViewController: UIViewController {
         
     }
     
+    var token: NSObjectProtocol?
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,39 +79,44 @@ class ComposeViewController: UIViewController {
             
         }else {
             navigationItem.title = "새 메모"
-            memoTextView.text = ""
+            memoTextView.text = "여기에 메모 내용을 입력하세요"
         }
+
+
+        pickerController.delegate = self
         
         
-            }
+    }
     
-    @IBAction func pickImageButton(_ sender: Any) {
+    
+    @IBAction func addImageAct(_ sender: Any) {
         
-        let pickerController = UIImagePickerController()
-        
-        pickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        pickerController.delegate = self
         pickerController.allowsEditing = true
-        
+
         let alertController = UIAlertController(title: "사진 추가", message: "어느곳에서 사진을 가져오시겠습니까?", preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "사진 촬영", style: .default){ (action) in
-            pickerController.sourceType = .camera
-            self.present(pickerController, animated: true, completion: nil)
+            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+                self.pickerController.sourceType = .camera
+                self.present(self.pickerController, animated: true, completion: nil)
+            }
+            else{
+                print("Camera not available")
+            }
+
         }
         
         let photoLibaryAction = UIAlertAction(title: "사진 보관함", style: .default){
             (action) in
-            pickerController.sourceType = .photoLibrary
-            self.present(pickerController, animated: true, completion: nil)
+            self.pickerController.sourceType = .photoLibrary
+            self.present(self.pickerController, animated: true, completion: nil)
         }
         let savedPhotoAction = UIAlertAction(title: "저장된 사진", style: .default){
             (action) in
-            pickerController.sourceType = .savedPhotosAlbum
-            self.present(pickerController, animated: true,  completion: nil)
+            self.pickerController.sourceType = .savedPhotosAlbum
+            self.present(self.pickerController, animated: true,  completion: nil)
         }
-        
-        
-        
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alertController.addAction(photoLibaryAction)
@@ -109,11 +125,11 @@ class ComposeViewController: UIViewController {
         alertController.addAction(cancleAction)
         
         present(alertController, animated: true, completion: nil)
-        
-        
-        
-        
     }
+    
+    
+    
+    
     
 
 }
@@ -127,3 +143,25 @@ extension ComposeViewController {
     static let newMemoDidInsert = Notification.Name(rawValue: "newMemoDidInsert")
     static let memoDidChange = Notification.Name(rawValue: "memDidChange")
 }
+
+extension ComposeViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    public func imagePickerController(_ picker: UIImagePickerController,
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            bufImage = image
+            memoImageView.image = bufImage
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
+
+    
+    
+    
+
+    
+
+}
+
+

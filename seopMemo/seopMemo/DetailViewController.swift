@@ -61,19 +61,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         token = NotificationCenter.default.addObserver(forName: ComposeViewController.memoDidChange, object: nil, queue: OperationQueue.main, using: {[weak self ] (noti) in self?.memoTableView.reloadData()})
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -101,8 +90,9 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath)
-            
-//            cell.imageView?.image = UIImage(data: memo!.memoImage!)
+            if  let images = memo?.memoImage {
+                cell.imageView?.image = UIImage(data: images)
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)

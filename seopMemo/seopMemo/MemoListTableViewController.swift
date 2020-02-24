@@ -74,7 +74,10 @@ class MemoListTableViewController: UITableViewController {
         cell.memoTitleView?.text = target.memoTitle
         cell.memoPreView?.text = target.content
         cell.memoDateView?.text = formatter.string(for : target.insertDate)
-//        cell.memoPreImageView?.image = UIImage(data: target.memoImage! as Data)
+        if let images = target.memoImage{
+            cell.memoPreImageView?.image = UIImage(data: images)
+        }
+
 
         return cell
     }
