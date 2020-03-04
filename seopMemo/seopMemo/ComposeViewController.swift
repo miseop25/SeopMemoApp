@@ -44,6 +44,10 @@ class ComposeViewController: UIViewController {
         if let target = editTarget{
             target.content = memo
             target.memoTitle = memoTitle
+            if let imageData = bufImage?.pngData(){
+                target.memoImage = imageData
+            }
+            
             DataManager.shared.saveContext()
             NotificationCenter.default.post(name : ComposeViewController.memoDidChange ,object: nil)
         }else {
@@ -74,6 +78,13 @@ class ComposeViewController: UIViewController {
             navigationItem.title = "메모 편집"
             memoTextView.text = memo.content
             memoTitleField.text = memo.memoTitle
+            if let image = memo.memoImage
+            {
+                memoImageView.image = UIImage(data: image)
+            }else {
+                print("non image")
+            }
+            
             originalMemoContent = memo.content
             originalMemoTitle = memo.memoTitle
             

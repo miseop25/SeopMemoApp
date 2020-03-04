@@ -10,7 +10,6 @@ import UIKit
 
 class MemoListTableViewController: UITableViewController {
     
-    
 
     let formatter: DateFormatter = {
        let f = DateFormatter()
