@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ok-gd-1y9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ok-gd-1y9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -272,14 +272,14 @@
                                 <rect key="frame" x="8" y="96" width="398" height="345"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용을 입력하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H7N-mx-KIK">
-                                        <rect key="frame" x="8" y="43" width="382" height="294"/>
+                                        <rect key="frame" x="8" y="44" width="382" height="293"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-QU-C0E">
-                                        <rect key="frame" x="8" y="8" width="382" height="27"/>
+                                        <rect key="frame" x="8" y="8" width="382" height="28"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -402,11 +402,11 @@
             <point key="canvasLocation" x="1247.8260869565217" y="-691.07142857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="photo" catalog="system" width="64" height="46"/>
-        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Rl-tR-4zM"/>
+        <segue reference="Sfs-e4-LSe"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
+    </resources>
 </document>
